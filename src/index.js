@@ -17,7 +17,7 @@ const plugin = async (ctx) => {
     log.i('Zp Prepare Plugin: npm preparing...');
     log.d('Zp Prepare Plugin: executing shell ' + chalk.blue(sh));
     try {
-      execSync(sh, shellCwd);
+      execSync(sh, { cwd: shellCwd });
       log.i('Zp Prepare Plugin: npm prepared successfully.');
     } catch (err) {
       log.e(chalk.redBright(`${err} (Error Code: 3002)`));
