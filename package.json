@@ -1,0 +1,50 @@
+{
+  "name": "@zppack/zp-plugin-prepare",
+  "version": "0.1.0",
+  "description": "A plugin for zp to run npm scripts prepare.",
+  "keywords": [],
+  "homepage": "https://github.com/zppack/zp-plugin-prepare",
+  "bugs": {
+    "url": "https://github.com/zppack/zp-plugin-prepare/#issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zppack/zp-plugin-prepare.git"
+  },
+  "license": "MIT",
+  "author": "John Chan",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "module": "dist/index.ejs",
+  "bin": {},
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "",
+    "prepare": "npm run build",
+    "prebuild": "npm run clean",
+    "build": "babel src -d dist",
+    "release": "standard-version && npm publish --access public",
+    "postrelease": "git push && git push origin --tags",
+    "release:first": "standard-version --first-release && npm publish --access public",
+    "postrelease:first": "git push -u origin master && git push origin --tags",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@zppack/log": "^1.0.2",
+    "chalk": "^4.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "rimraf": "^3.0.2",
+    "standard-version": "^9.1.1"
+  },
+  "engines": {
+    "node": ">=12",
+    "npm": ">=6"
+  }
+}
