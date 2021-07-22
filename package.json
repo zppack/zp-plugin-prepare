@@ -1,6 +1,6 @@
 {
   "name": "@zppack/zp-plugin-prepare",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A plugin for zp to run npm scripts prepare.",
   "keywords": [],
   "homepage": "https://github.com/zppack/zp-plugin-prepare",
