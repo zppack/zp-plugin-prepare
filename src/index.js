@@ -13,7 +13,7 @@ const plugin = async (ctx) => {
   log.d('Zp Prepare Plugin: reading package.json: \n', chalk.gray(JSON.stringify(pkg)));
 
   if (pkg.scripts && pkg.scripts.prepare) {
-  const sh = 'npm run prepare';
+    const sh = 'npm run prepare';
     log.i('Zp Prepare Plugin: npm preparing...');
     log.d('Zp Prepare Plugin: executing shell ' + chalk.blue(sh));
     try {
@@ -22,6 +22,8 @@ const plugin = async (ctx) => {
     } catch (err) {
       log.e(chalk.redBright(`${err} (Error Code: 3002)`));
     }
+  } else {
+    log.i('Zp Prepare Plugin: no scripts and bypass npm prepare.');
   }
 };
 
